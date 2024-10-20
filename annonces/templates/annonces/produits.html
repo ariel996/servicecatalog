@@ -1,0 +1,117 @@
+{% extends 'annonces/main_bak.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans 'Announces' %} {% endblock %}
+{% block styles %}
+    <!-- Select2 -->
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2/css/select2.min.css' %}">
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+{% endblock %}
+
+{% block content %}
+ <!-- ======= Team Section ======= -->
+<section id="team" class="team section-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>{% trans 'What Do You Want ?' %}</h2>
+    </div>
+    <div class="row">
+
+      <div class="col-md-12 col-xs-4 col-lg-12 col-sm-8">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+          <form method="post">
+            <div class="row">
+              <div class="col">
+                <select name="category" id="category" class="form-control select2">
+                  <option value="" selected disabled>{% trans 'Choose a category' %}</option>
+                  {% for category in product_categories %}
+                  <option value="{{ category.id }}">{{ category.category_name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+              <div class="col">
+                <button class="btn btn-info">{% trans 'Search' %}</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h2>{% trans 'Products' %}</h2>
+      <p>{% trans 'Our latest announces' %}</p>
+    </div>
+
+    <div class="row">
+      {%  for annonce in page_obj %}
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="member">
+            <div class="member-img">
+              <img src="{{ annonce.annonce_photo.url }}" alt="{{ annonce.user.username }}" height="300px" width="300px">
+              <div class="social">
+                <a href="" id="like"><i class="icofont-like"></i></a>
+                <a href="{% url 'detail_announce' annonce.id %}"><i class="icofont-eye"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>{{ annonce.user.username }}</h4>
+              <span>{{ annonce.category.category_name }}</span>
+              <p class="card-text"><small class="text-muted">{{ annonce.date_created }}</small></p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="row col-md-6">
+        <div class="btn-group" role="group" aria-label="pagination">
+            {% if page_obj.has_previous %}
+                <a href="?page=1" class="btn btn-primary">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-primary">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </div>
+    </div>
+
+  </div>
+</section><!-- End Team Section -->
+
+{% endblock %}
+{% block scripts %}
+  <!-- Select2 -->
+<script src="{% static '/admin/plugins/select2/js/select2.full.min.js' %}"></script>
+<script>
+//Initialize Select2 Elements
+    $('.select2').select2()
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+      })
+</script>
+<script>
+  $(document).ready(function(){
+    $("#like").on('click', function(){
+      var like = $(this).val();
+      $.ajax({
+        url: '',
+        method: 'POST',
+        data:
+      });
+    });
+  });
+</script>
+{% endblock %}

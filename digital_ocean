@@ -1,0 +1,8 @@
+arielnana020596
+requirements.txt
+Login: root
+password: CamerBusiness2020#A
+
+
+pip3 install -r requirements.txt
+sudo apt install python3-pip 

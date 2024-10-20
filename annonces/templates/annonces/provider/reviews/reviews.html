@@ -1,0 +1,63 @@
+{% extends 'annonces/provider/main.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans 'Inactive services' %}{% endblock %}
+{% block content %}
+<h4 class="widget-title">Reviews</h4>
+    <div class="card review-card mb-0">
+        <div class="card-body">
+
+            <!-- Review -->
+            <div class="review-list">
+                <div class="review-img">
+                    <img class="rounded img-fluid" src="assets/img/services/service-08.jpg" alt="">
+                </div>
+                <div class="review-info">
+                    <h5><a href="#">Building Construction Services</a></h5>
+                    <div class="review-date">July 11, 2020 11:38 am</div>
+                    <p class="mb-2">Good Work</p>
+                    <div class="review-user">
+                        <img class="avatar-xs rounded-circle" src="assets/img/customer/user-01.jpg" alt=""> Jeffrey Akridge
+                    </div>
+                </div>
+                <div class="review-count">
+                    <div class="rating">
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <span class="d-inline-block average-rating">(5)</span>
+                    </div>
+                </div>
+            </div>
+            <!-- /Review -->
+
+            <!-- Review -->
+            <div class="review-list">
+                <div class="review-img">
+                    <img class="rounded img-fluid" src="assets/img/services/service-09.jpg" alt="">
+                </div>
+                <div class="review-info">
+                    <h5><a href="#">Commercial Painting Services</a></h5>
+                    <div class="review-date">July 05, 2020 15:33 pm</div>
+                    <p class="mb-2">Best Work</p>
+                    <div class="review-user">
+                        <img class="avatar-xs rounded-circle" src="assets/img/customer/user-02.jpg" alt=""> Nancy Olson
+                    </div>
+                </div>
+                <div class="review-count">
+                    <div class="rating">
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <i class="fas fa-star filled"></i>
+                        <span class="d-inline-block average-rating">(5)</span>
+                    </div>
+                </div>
+            </div>
+            <!-- /Review -->
+        </div>
+    </div>
+{% endblock %}

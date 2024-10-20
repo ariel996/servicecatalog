@@ -1,0 +1,71 @@
+{% extends 'annonces/prestataire/main.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block title %} {% trans 'Create product' %} {% endblock %}
+{% block styles %}
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2/css/select2.min.css' %}">
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+{% endblock %}
+
+{% block breadcrumb %}
+<div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">{% trans 'Dashboard' %} </h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">{% trans 'Home' %}</a></li>
+              <li class="breadcrumb-item active">{% trans 'create product' %}</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+{% endblock %}
+
+{% block content %}
+
+<div class="col-lg-12 col-md-8 col-sm-6 col-xs-4">
+    <!-- Horizontal Form -->
+<div class="card card-info">
+  <div class="card-header">
+    <h3 class="card-title">
+        {% trans 'Create a product' %}
+    </h3>
+  </div>
+  <!-- /.card-header -->
+  <!-- form start -->
+  <form class="form-horizontal" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+    <div class="card-body">
+        {{ form|crispy }}
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary">{% trans 'Create' %}</button>
+      <button type="reset" class="btn btn-default float-right">{% trans 'Cancel' %}</button>
+    </div>
+    <!-- /.card-footer -->
+  </form>
+</div>
+<!-- /.card -->
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Select2 -->
+<script src="{% static '/admin/plugins/select2/js/select2.full.min.js' %}"></script>
+<script>
+//Initialize Select2 Elements
+    $('.select2').select2()
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+      })
+</script>
+{% endblock %}

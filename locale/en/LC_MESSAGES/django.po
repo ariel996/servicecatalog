@@ -1,0 +1,724 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-10 18:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: annonces/templates/annonces/about.html:4
+#: annonces/templates/annonces/annonces.html:4
+#: annonces/templates/annonces/contact.html:3
+#: annonces/templates/annonces/index.html:59
+#: annonces/templates/annonces/main.html:56
+#: annonces/templates/annonces/prestataire/main.html:122
+#: annonces/templates/annonces/produits.html:4
+#: annonces/templates/annonces/search_result.html:4
+msgid "Announces"
+msgstr ""
+
+#: annonces/templates/annonces/annonces.html:17
+msgid "What Do You Want ?"
+msgstr ""
+
+#: annonces/templates/annonces/annonces.html:27
+#: annonces/templates/annonces/search_result.html:26
+msgid "Choose a category"
+msgstr ""
+
+#: annonces/templates/annonces/annonces.html:35
+#: annonces/templates/annonces/search_result.html:34
+msgid "Choose a town"
+msgstr ""
+
+#: annonces/templates/annonces/annonces.html:42
+#: annonces/templates/annonces/search_result.html:41
+msgid "Rechercher"
+msgstr ""
+
+#: annonces/templates/annonces/annonces.html:51
+#: annonces/templates/annonces/search_result.html:50
+#: annonces/templates/annonces/single.html:11
+msgid "Annonces"
+msgstr ""
+
+#: annonces/templates/annonces/annonces.html:52
+#: annonces/templates/annonces/produits.html:49
+msgid "Our latest announces"
+msgstr ""
+
+#: annonces/templates/annonces/client/main.html:58
+msgid "See All Messages"
+msgstr ""
+
+#: annonces/templates/annonces/client/main.html:70
+#: annonces/templates/annonces/prestataire/main.html:71
+msgid "Visit the site"
+msgstr ""
+
+#: annonces/templates/annonces/client/main.html:75
+#: annonces/templates/annonces/client/profile/show.html:22
+#: annonces/templates/annonces/client/profile/show.html:38
+#: annonces/templates/annonces/prestataire/main.html:76
+#: annonces/templates/annonces/prestataire/profile/show.html:22
+#: annonces/templates/annonces/prestataire/profile/show.html:38
+msgid "My profile"
+msgstr ""
+
+#: annonces/templates/annonces/client/main.html:79
+#: annonces/templates/annonces/prestataire/main.html:81
+msgid "Logout"
+msgstr ""
+
+#: annonces/templates/annonces/client/main.html:121
+#: annonces/templates/annonces/prestataire/main.html:170
+msgid "Settings"
+msgstr ""
+
+#: annonces/templates/annonces/client/main.html:130
+#: annonces/templates/annonces/prestataire/main.html:178
+msgid "Modify my account"
+msgstr ""
+
+#: annonces/templates/annonces/client/main.html:136
+#: annonces/templates/annonces/prestataire/main.html:184
+msgid "Show my profile"
+msgstr ""
+
+#: annonces/templates/annonces/client/main.html:144
+#: annonces/templates/annonces/client/messages/sent.html:5
+#: annonces/templates/annonces/client/messages/sent.html:22
+#: annonces/templates/annonces/prestataire/main.html:216
+#: annonces/templates/annonces/prestataire/messages/sent.html:5
+#: annonces/templates/annonces/prestataire/messages/sent.html:22
+msgid "Messages"
+msgstr ""
+
+#: annonces/templates/annonces/client/main.html:177
+#: annonces/templates/annonces/prestataire/main.html:255
+msgid "Camerbusiness"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/index.html:4
+#: annonces/templates/annonces/client/messages/index.html:21
+#: annonces/templates/annonces/client/messages/reply.html:21
+#: annonces/templates/annonces/prestataire/messages/index.html:4
+#: annonces/templates/annonces/prestataire/messages/index.html:21
+#: annonces/templates/annonces/prestataire/messages/reply.html:21
+msgid "List messages"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/index.html:16
+#: annonces/templates/annonces/client/messages/reply.html:16
+#: annonces/templates/annonces/client/messages/sent.html:17
+#: annonces/templates/annonces/client/messages/show.html:17
+#: annonces/templates/annonces/client/profile/edit.html:17
+#: annonces/templates/annonces/client/profile/show.html:17
+#: annonces/templates/annonces/prestataire/announces/create.html:17
+#: annonces/templates/annonces/prestataire/announces/edit.html:17
+#: annonces/templates/annonces/prestataire/announces/index.html:16
+#: annonces/templates/annonces/prestataire/catalogues/create.html:16
+#: annonces/templates/annonces/prestataire/catalogues/edit.html:17
+#: annonces/templates/annonces/prestataire/catalogues/index.html:16
+#: annonces/templates/annonces/prestataire/comments/index.html:16
+#: annonces/templates/annonces/prestataire/comments/reply.html:16
+#: annonces/templates/annonces/prestataire/dashboard.html:12
+#: annonces/templates/annonces/prestataire/messages/index.html:16
+#: annonces/templates/annonces/prestataire/messages/reply.html:16
+#: annonces/templates/annonces/prestataire/messages/sent.html:17
+#: annonces/templates/annonces/prestataire/messages/show.html:17
+#: annonces/templates/annonces/prestataire/products/create.html:17
+#: annonces/templates/annonces/prestataire/products/edit.html:17
+#: annonces/templates/annonces/prestataire/products/index.html:16
+#: annonces/templates/annonces/prestataire/profile/edit.html:17
+#: annonces/templates/annonces/prestataire/profile/show.html:17
+#: annonces/templates/annonces/prestataire/settings/show.html:17
+msgid "Dashboard"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/index.html:20
+#: annonces/templates/annonces/client/messages/reply.html:20
+#: annonces/templates/annonces/client/messages/sent.html:21
+#: annonces/templates/annonces/client/messages/show.html:21
+#: annonces/templates/annonces/client/profile/edit.html:21
+#: annonces/templates/annonces/client/profile/show.html:21
+#: annonces/templates/annonces/index.html:58
+#: annonces/templates/annonces/main.html:55
+#: annonces/templates/annonces/prestataire/announces/create.html:21
+#: annonces/templates/annonces/prestataire/announces/edit.html:21
+#: annonces/templates/annonces/prestataire/announces/index.html:20
+#: annonces/templates/annonces/prestataire/catalogues/create.html:20
+#: annonces/templates/annonces/prestataire/catalogues/edit.html:21
+#: annonces/templates/annonces/prestataire/catalogues/index.html:20
+#: annonces/templates/annonces/prestataire/comments/index.html:20
+#: annonces/templates/annonces/prestataire/comments/reply.html:20
+#: annonces/templates/annonces/prestataire/messages/index.html:20
+#: annonces/templates/annonces/prestataire/messages/reply.html:20
+#: annonces/templates/annonces/prestataire/messages/sent.html:21
+#: annonces/templates/annonces/prestataire/messages/show.html:21
+#: annonces/templates/annonces/prestataire/products/create.html:21
+#: annonces/templates/annonces/prestataire/products/edit.html:21
+#: annonces/templates/annonces/prestataire/products/index.html:20
+#: annonces/templates/annonces/prestataire/profile/edit.html:21
+#: annonces/templates/annonces/prestataire/profile/show.html:21
+#: annonces/templates/annonces/prestataire/settings/show.html:21
+msgid "Home"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/index.html:37
+#: annonces/templates/annonces/prestataire/messages/index.html:37
+msgid "List of your messages"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/reply.html:4
+#: annonces/templates/annonces/prestataire/messages/reply.html:4
+msgid "Reply message"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/reply.html:38
+#: annonces/templates/annonces/prestataire/messages/reply.html:38
+msgid "Reply to a message"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/sent.html:35
+#: annonces/templates/annonces/prestataire/messages/sent.html:35
+msgid "Compose"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/sent.html:39
+#: annonces/templates/annonces/prestataire/messages/sent.html:39
+msgid "Folders"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/sent.html:50
+#: annonces/templates/annonces/client/messages/sent.html:69
+#: annonces/templates/annonces/prestataire/messages/sent.html:50
+#: annonces/templates/annonces/prestataire/messages/sent.html:69
+msgid "Inbox"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/sent.html:56
+#: annonces/templates/annonces/prestataire/messages/sent.html:56
+msgid "Sent"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/show.html:5
+#: annonces/templates/annonces/client/messages/show.html:22
+#: annonces/templates/annonces/client/messages/show.html:38
+#: annonces/templates/annonces/prestataire/messages/show.html:5
+#: annonces/templates/annonces/prestataire/messages/show.html:22
+#: annonces/templates/annonces/prestataire/messages/show.html:38
+msgid "View message"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/show.html:48
+#: annonces/templates/annonces/prestataire/messages/show.html:48
+msgid "Sender"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/show.html:55
+#: annonces/templates/annonces/index.html:61
+#: annonces/templates/annonces/main.html:58
+#: annonces/templates/annonces/prestataire/messages/show.html:55
+msgid "Contact"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/show.html:62
+#: annonces/templates/annonces/prestataire/messages/show.html:62
+msgid "Subject"
+msgstr ""
+
+#: annonces/templates/annonces/client/messages/show.html:69
+#: annonces/templates/annonces/prestataire/messages/show.html:69
+msgid "Content"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/edit.html:5
+msgid "Modify profile"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/edit.html:22
+#: annonces/templates/annonces/prestataire/announces/edit.html:22
+#: annonces/templates/annonces/prestataire/profile/edit.html:22
+msgid "List of announces"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/edit.html:23
+#: annonces/templates/annonces/prestataire/announces/edit.html:5
+#: annonces/templates/annonces/prestataire/announces/edit.html:23
+#: annonces/templates/annonces/prestataire/profile/edit.html:5
+#: annonces/templates/annonces/prestataire/profile/edit.html:23
+msgid "Modify announce"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/edit.html:39
+#: annonces/templates/annonces/prestataire/profile/edit.html:39
+msgid "Editing a profile"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/edit.html:50
+#: annonces/templates/annonces/prestataire/profile/edit.html:50
+msgid "Username"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/edit.html:56
+#: annonces/templates/annonces/client/profile/show.html:62
+#: annonces/templates/annonces/prestataire/profile/edit.html:56
+#: annonces/templates/annonces/prestataire/profile/show.html:62
+msgid "Phone"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/edit.html:63
+#: annonces/templates/annonces/prestataire/profile/edit.html:63
+msgid "Profile picture"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/edit.html:70
+#: annonces/templates/annonces/client/profile/show.html:55
+#: annonces/templates/annonces/prestataire/profile/edit.html:70
+#: annonces/templates/annonces/prestataire/profile/show.html:55
+msgid "Address"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/edit.html:78
+#: annonces/templates/annonces/prestataire/announces/edit.html:91
+#: annonces/templates/annonces/prestataire/products/edit.html:51
+#: annonces/templates/annonces/prestataire/profile/edit.html:78
+msgid "Update"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/edit.html:79
+#: annonces/templates/annonces/prestataire/announces/create.html:91
+#: annonces/templates/annonces/prestataire/announces/edit.html:92
+#: annonces/templates/annonces/prestataire/catalogues/create.html:54
+#: annonces/templates/annonces/prestataire/catalogues/edit.html:55
+#: annonces/templates/annonces/prestataire/products/create.html:109
+#: annonces/templates/annonces/prestataire/products/edit.html:52
+#: annonces/templates/annonces/prestataire/profile/edit.html:79
+#: annonces/templates/annonces/prestataire/settings/show.html:51
+msgid "Cancel"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/show.html:5
+msgid "Display profile"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/show.html:48
+#: annonces/templates/annonces/prestataire/profile/show.html:48
+msgid "Name"
+msgstr ""
+
+#: annonces/templates/annonces/client/profile/show.html:69
+#: annonces/templates/annonces/prestataire/profile/show.html:69
+msgid "Email"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:60
+#: annonces/templates/annonces/index.html:312
+#: annonces/templates/annonces/main.html:57
+#: annonces/templates/annonces/main.html:106
+#: annonces/templates/annonces/prestataire/main.html:146
+#: annonces/templates/annonces/produits.html:48
+msgid "Products"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:62
+#: annonces/templates/annonces/main.html:59
+msgid "About"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:63
+#: annonces/templates/annonces/login.html:6
+#: annonces/templates/annonces/main.html:60
+#: annonces/templates/annonces/reset_password.html:6
+msgid "Login"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:64
+#: annonces/templates/annonces/main.html:61
+msgid "Language"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:76
+#: annonces/templates/annonces/main.html:72
+msgid "Post an announce"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:170
+msgid "Testimonials"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:230
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:308
+#: annonces/templates/annonces/main.html:102
+msgid "Useful Links"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:310
+#: annonces/templates/annonces/main.html:104
+msgid "home"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:311
+#: annonces/templates/annonces/main.html:105
+msgid "About us"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:313
+#: annonces/templates/annonces/index.html:322
+#: annonces/templates/annonces/main.html:107
+#: annonces/templates/annonces/main.html:116
+msgid "Announce"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:314
+#: annonces/templates/annonces/main.html:108
+msgid "Privacy policy"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:319
+#: annonces/templates/annonces/main.html:113
+msgid "Our Services"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:321
+#: annonces/templates/annonces/main.html:115
+msgid "Online Support"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:323
+#: annonces/templates/annonces/main.html:117
+msgid "Consulting"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:324
+#: annonces/templates/annonces/main.html:118
+msgid "Assistance"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:325
+#: annonces/templates/annonces/main.html:119
+msgid "Online messaging"
+msgstr ""
+
+#: annonces/templates/annonces/index.html:330
+msgid "Join Our Newsletter"
+msgstr ""
+
+#: annonces/templates/annonces/login.html:17
+msgid "Se connecter"
+msgstr ""
+
+#: annonces/templates/annonces/login.html:49
+msgid "Continue with Google"
+msgstr ""
+
+#: annonces/templates/annonces/login.html:54
+msgid "Continue with Facebook"
+msgstr ""
+
+#: annonces/templates/annonces/login.html:59
+msgid "Cannot signin ? Create an account"
+msgstr ""
+
+#: annonces/templates/annonces/main.html:124
+msgid "Join our newsletter"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/create.html:5
+#: annonces/templates/annonces/prestataire/announces/index.html:4
+#: annonces/templates/annonces/prestataire/main.html:130
+msgid "Create announce"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/create.html:22
+msgid "create announce"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/create.html:38
+msgid "Create an announce"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/create.html:48
+#: annonces/templates/annonces/prestataire/announces/edit.html:49
+#: annonces/templates/annonces/prestataire/products/create.html:48
+msgid "Category"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/create.html:51
+#: annonces/templates/annonces/prestataire/announces/edit.html:52
+#: annonces/templates/annonces/prestataire/products/create.html:51
+msgid "choose a category"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/create.html:59
+#: annonces/templates/annonces/prestataire/announces/edit.html:60
+msgid "Title of the announce"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/create.html:65
+#: annonces/templates/annonces/prestataire/announces/edit.html:66
+#: annonces/templates/annonces/prestataire/announces/index.html:50
+msgid "Town"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/create.html:68
+#: annonces/templates/annonces/prestataire/announces/edit.html:69
+msgid "choose a town"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/create.html:76
+#: annonces/templates/annonces/prestataire/announces/edit.html:77
+msgid "Description"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/create.html:82
+#: annonces/templates/annonces/prestataire/announces/edit.html:83
+msgid "Picture of the announce"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/create.html:90
+#: annonces/templates/annonces/prestataire/catalogues/create.html:53
+#: annonces/templates/annonces/prestataire/catalogues/edit.html:54
+#: annonces/templates/annonces/prestataire/products/create.html:108
+#: annonces/templates/annonces/prestataire/settings/show.html:50
+msgid "Create"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/edit.html:39
+msgid "Editing an announce"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/index.html:21
+msgid "List announce"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/announces/index.html:37
+msgid "List of your announces"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/catalogues/create.html:4
+msgid "Create catalogue"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/catalogues/create.html:21
+msgid "create catalogue"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/catalogues/create.html:37
+#: annonces/templates/annonces/prestataire/main.html:208
+msgid "Create a catalogue"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/catalogues/create.html:46
+#: annonces/templates/annonces/prestataire/catalogues/edit.html:47
+msgid "Catalogue name"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/catalogues/edit.html:5
+#: annonces/templates/annonces/prestataire/catalogues/edit.html:22
+msgid "Modify catalogue"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/catalogues/edit.html:38
+msgid "Modify a catalogue"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/catalogues/index.html:4
+#: annonces/templates/annonces/prestataire/catalogues/index.html:21
+msgid "List catalogue"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/catalogues/index.html:37
+msgid "List of your catalogue"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/comments/index.html:4
+#: annonces/templates/annonces/prestataire/comments/index.html:21
+#: annonces/templates/annonces/prestataire/comments/reply.html:21
+msgid "List comments"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/comments/index.html:37
+msgid "List of your comments"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/comments/reply.html:4
+msgid "Reply comment"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/comments/reply.html:38
+msgid "Reply to a comment"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/main.html:136
+msgid "List announces"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/main.html:154
+#: annonces/templates/annonces/prestataire/products/create.html:5
+#: annonces/templates/annonces/prestataire/products/index.html:4
+#: annonces/templates/annonces/prestataire/profile/show.html:5
+#: annonces/templates/annonces/prestataire/settings/show.html:5
+msgid "Create product"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/main.html:160
+#: annonces/templates/annonces/prestataire/products/index.html:21
+msgid "List products"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/main.html:194
+#: annonces/templates/annonces/prestataire/products/create.html:60
+msgid "Catalogue"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/main.html:202
+msgid "List my catalogues"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/main.html:222
+msgid "Comments"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/create.html:22
+#: annonces/templates/annonces/prestataire/settings/show.html:22
+msgid "create product"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/create.html:38
+#: annonces/templates/annonces/prestataire/settings/show.html:38
+msgid "Create a product"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/create.html:63
+msgid "choose a catalogue"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/create.html:72
+msgid "Product name"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/create.html:79
+msgid "Product price"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/create.html:86
+msgid "Product quantity"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/create.html:93
+msgid "Product description"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/create.html:100
+msgid "Product image"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/edit.html:5
+#: annonces/templates/annonces/prestataire/products/edit.html:23
+msgid "Modify product"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/edit.html:22
+msgid "List of products"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/edit.html:39
+msgid "Edit a product"
+msgstr ""
+
+#: annonces/templates/annonces/prestataire/products/index.html:37
+msgid "List of your products"
+msgstr ""
+
+#: annonces/templates/annonces/register.html:6
+#: annonces/templates/annonces/signup.html:6
+msgid "Register"
+msgstr ""
+
+#: annonces/templates/annonces/register.html:17
+#: annonces/templates/annonces/register.html:56
+#: annonces/templates/annonces/signup.html:17
+msgid "Create an account"
+msgstr ""
+
+#: annonces/templates/annonces/register.html:60
+#: annonces/templates/annonces/signup.html:41
+msgid "You already have an account ? Sign in here"
+msgstr ""
+
+#: annonces/templates/annonces/reset_password.html:17
+msgid "Password reset"
+msgstr ""
+
+#: annonces/templates/annonces/search_result.html:16
+msgid "Que recherchez-vous ?"
+msgstr ""
+
+#: annonces/templates/annonces/search_result.html:51
+msgid "Results"
+msgstr ""
+
+#: annonces/templates/annonces/signup.html:29
+msgid "Create an account with my email address"
+msgstr ""
+
+#: annonces/templates/annonces/signup.html:33
+msgid "Create with Google"
+msgstr ""
+
+#: annonces/templates/annonces/signup.html:37
+msgid "Create with Facebook"
+msgstr ""
+
+#: annonces/templates/annonces/single.html:3
+msgid "Detail Announce"
+msgstr ""
+
+#: annonces/templates/annonces/single.html:18
+msgid "description announce"
+msgstr ""
+
+#: annonces/templates/annonces/single.html:22
+msgid "Commentaire"
+msgstr ""
+
+#: annonces/templates/annonces/single.html:55
+msgid "Poster une annonce"
+msgstr ""
+
+#: annonces/templates/annonces/single.html:59
+msgid "Poster"
+msgstr ""
+
+#: annonces/templates/annonces/single.html:75
+msgid "A propos de"
+msgstr ""
+
+#: annonces/templates/annonces/single.html:96
+msgid "Envoyer le message"
+msgstr ""
+
+#: service/settings.py:138
+msgid "English"
+msgstr ""
+
+#: service/settings.py:139
+msgid "French"
+msgstr ""

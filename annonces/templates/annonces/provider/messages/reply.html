@@ -1,0 +1,106 @@
+{% extends 'annonces/prestataire/main.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %} {% trans 'Reply message' %} {% endblock %}
+{% block styles %}
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2/css/select2.min.css' %}">
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+{% endblock %}
+
+{% block breadcrumb %}
+<div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">{% trans 'Dashboard' %} </h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">{% trans 'Home' %}</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'presta_show_messages' %}">{% trans 'List messages' %}</a></li>
+                <li class="breadcrumb-item">Reply message</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+{% endblock %}
+
+{% block content %}
+
+<div class="col-lg-12 col-md-8 col-sm-6 col-xs-4">
+    <!-- Horizontal Form -->
+<div class="card card-info">
+  <div class="card-header">
+    <h3 class="card-title">
+        {% trans 'Reply to a message' %}
+    </h3>
+  </div>
+  <!-- /.card-header -->
+  <!-- form start -->
+    <div class="card-body">
+        <form method="post" action="{% url 'presta_reply_to_message' %}">
+            {% csrf_token %}
+            <input type="hidden" name="user" value="{{ user.id }}">
+            <div class="form-group row">
+                <label for="client" class="col-form-label col-sm-2">To:</label>
+                <div class="col-sm-10">
+                    <input type="text" name="client" id="client" class="form-control" value="{{ message.client }}" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="name" class="col-form-label col-sm-2">Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" name="name" id="name" class="form-control" value="{{ message.name }}" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="subject" class="col-form-label col-sm-2">Subject:</label>
+                <div class="col-sm-10">
+                    <input type="text" name="subject" id="subject" class="form-control" placeholder="subject" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="contact" class="col-form-label col-sm-2">Contact:</label>
+                <div class="col-sm-10">
+                    <input type="tel" name="contact" id="contact" class="form-control" value="{{ request.user.profile.phone }}" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="contenu" class="col-form-label col-sm-2">Content:</label>
+                <div class="col-sm-10">
+                    <textarea name="contenu" id="contenu" cols="5" rows="5" class="form-control" required></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <input type="hidden" name="statut" value="0">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2"></label>
+                <div class="col-sm-10">
+                    <input type="submit" class="btn btn-primary" value="SEND MESSAGE">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- /.card -->
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Select2 -->
+<script src="{% static '/admin/plugins/select2/js/select2.full.min.js' %}"></script>
+<script>
+//Initialize Select2 Elements
+    $('.select2').select2()
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+      })
+</script>
+{% endblock %}

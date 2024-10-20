@@ -1,0 +1,5 @@
+{% load i18n %}
+<option value="" selected disabled>{% trans 'choose a subcategory' %}</option>
+{% for subcategory in subcategories %}
+<option value="{{ subcategory.id }}">{{ subcategory.name }}</option>
+{% endfor %}

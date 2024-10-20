@@ -1,0 +1,35 @@
+{% extends 'annonces/provider/main.html' %}
+
+{% load static %}
+{% load i18n %}
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+<h4 class="widget-title">Dashboard</h4>
+<div class="row">
+    <div class="col-lg-4">
+        <a href="{% url 'bookinglist' %}" class="dash-widget dash-bg-1">
+            <span class="dash-widget-icon">245</span>
+            <div class="dash-widget-info">
+                <span>{% trans 'Bookings' %}</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4">
+        <a href="{% url 'myservices' %}" class="dash-widget dash-bg-2">
+            <span class="dash-widget-icon">{{ servicescount }}</span>
+            <div class="dash-widget-info">
+                <span>Services</span>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4">
+        <a href="notifications.html" class="dash-widget dash-bg-3">
+            <span class="dash-widget-icon">8</span>
+            <div class="dash-widget-info">
+                <span>Notification</span>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

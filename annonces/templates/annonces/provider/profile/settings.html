@@ -1,0 +1,139 @@
+{% extends 'annonces/provider/main.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans 'Profile setting' %}{% endblock %}
+{% block content %}
+
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="widget">
+            <h4 class="widget-title">Profile Settings</h4>
+            <div class="row">
+                <div class="col-xl-12">
+                    <h5 class="form-title">Basic Information</h5>
+                </div>
+                <div class="form-group col-xl-12">
+                    <div class="media align-items-center mb-3">
+                        {% if user.profile.profile_picture %}
+                        <img class="user-image" src="{{ user.profile.profile_picture.url }}" alt="">
+                        {% else %}
+                        <img src="{% static 'assets/img/user.jpg' %}" alt="" class="user-image">
+                        {% endif %}
+                        <div class="media-body">
+                            <h5 class="mb-0">{{ user.username }}</h5>
+                            <p>{% trans 'Max file size is 2mb' %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">{% trans 'Username' %}</label>
+                <input class="form-control" type="text" value="{{ user.username }}" name="username">
+            </div>
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">{% trans 'First name' %}</label>
+                <input class="form-control" type="text" value="{{ user.first_name }}" name="first_name">
+            </div>
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">{% trans 'Last name' %}</label>
+                <input class="form-control" type="text" value="{{ user.last_name }}" name="last_name">
+            </div>
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">Email</label>
+                <input class="form-control" type="email" value="{{ user.email }}" readonly name="email">
+            </div>
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">{% trans 'Address' %}</label>
+                <input class="form-control" type="text" value="{{ user.profile.address }}" name="address">
+            </div>
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">{% trans 'Mobile number' %}</label>
+                <input class="form-control no_only" type="text" value="{{ user.profile.phone_number }}" required name="phone_number">
+            </div>
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">{% trans 'Date of birth' %}</label>
+                <input type="date" class="form-control provider_datepicker" autocomplete="off" name="dob" value="{{ user.profile.dob }}">
+            </div>
+            <div class="col-xl-12">
+                <h5 class="form-title">{% trans 'Service Info' %}</h5>
+            </div>
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">{% trans 'What Service do you Provide?' %}</label>
+                <select class="form-control select provider_category" title="Category" name="category">
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">Sub Category</label>
+                <select class="form-control select provider_subcategory" title="Sub Category" id="subcategory" name="subcategory">
+
+                </select>
+            </div>
+
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">{% trans 'Country' %}</label>
+                <select class="form-control" name="country" required>
+                    <option  disabled>Select Country</option>
+                    <option selected VALUE="CAMEROON">CAMEROON (+237)</option>
+                </select>
+            </div>
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">{% trans 'Region' %}</label>
+                <select class="form-control" name="region" id="region">
+                    <option selected disabled>Selected region</option>
+                    {% for region in regions %}
+                    <option value="{{ region.id }}">{{ region.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">{% trans 'City' %}</label>
+                <select class="form-control" name="city" id="city"></select>
+            </div>
+            <div class="form-group col-xl-6">
+                <label class="mr-sm-2">{% trans 'Profile picture' %}</label>
+                <input type="file" class="form-control" name="profile_picture">
+            </div>
+            <div class="form-group col-xl-12">
+                <button class="btn btn-primary pl-5 pr-5" type="submit">{% trans 'Update' %}</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        $("select[name='region']").change(function() {
+            var region_id = $(this).val();
+            $.ajax({
+                url: '{% url "get_city" %}',
+                method: "GET",
+                data: {'region_id': region_id},
+                success: function(data) {
+                    $("select[name='city']").html('');
+                    $("select[name='city']").html(data);
+                }
+            });
+        });
+
+        $("select[name='category']").change(function() {
+            var category_id = $(this).val();
+            $.ajax({
+                url: '{% url "get_subcategories" %}',
+                method: "GET",
+                data: {'category_id': category_id},
+                success: function(data) {
+                    $("select[name='subcategory']").html('');
+                    $("select[name='subcategory']").html(data);
+                }
+            });
+        });
+
+    });
+</script>
+{% endblock %}

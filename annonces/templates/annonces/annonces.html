@@ -1,0 +1,82 @@
+{% extends 'annonces/main_bak.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans 'Announces' %} {% endblock %}
+{% block styles %}
+
+{% endblock %}
+<link href="{% static 'admin/plugins/select2-bootstrap4-theme/css/select2-bootstrap4.min.css' %}" rel="stylesheet">
+    <!-- Select2 -->
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2/css/select2.min.css' %}">
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+{% block content %}
+ <!-- ======= Team Section ======= -->
+<section id="team" class="team section-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>{% trans 'What Do You Want ?' %}</h2>
+    </div>
+    <div class="row">
+
+      <div class="col-md-10 col-xs-4 col-lg-12 col-sm-8">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+          <form method="post">
+            <div class="row">
+              <div class="col">
+                <select name="category" id="category" class="form-control select2">
+                  <option value="" selected disabled>{% trans 'Choose a category' %}</option>
+                  {% for category in categories %}
+                  <option value="{{ category.id }}">{{ category.category_name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col">
+                <select name="villes" id="villes" class="form-control select2">
+                  <option value="" selected disabled>{% trans 'Choose a town' %}</option>
+                  {% for ville in villes %}
+                  <option value="{{ ville.id }}">{{ ville.name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col">
+                <button class="btn btn-info">{% trans 'Search' %}</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h2>{% trans 'Announces' %}</h2>
+      <p>{% trans 'Our latest announces' %}</p>
+    </div>
+
+    <div class="row">
+      {%  for annonce in annonces %}
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="member">
+            <div class="member-img">
+              <img src="{{ annonce.annonce_photo.url }}" alt="{{ annonce.user.username }}" height="300px" width="300px">
+              <div class="social">
+                <!--<a href="{% url 'like' annonce.id %}" id="like"><i class="icofont-like"></i></a>-->
+                <a href="{% url 'detail_announce' annonce.id %}"><i class="icofont-eye"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>{{ annonce.user.username }}</h4>
+              <span>{{ annonce.category.category_name }}</span>
+              <p class="card-text"><small class="text-muted">{{ annonce.date_created }}</small></p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section><!-- End Team Section -->
+
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}

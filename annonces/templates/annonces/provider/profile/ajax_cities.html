@@ -1,0 +1,5 @@
+{% load i18n %}
+<option value="" selected disabled>{% trans 'choose a city' %}</option>
+{% for city in cities %}
+<option value="{{ city.id }}">{{ city.name }}</option>
+{% endfor %}

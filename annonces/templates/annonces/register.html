@@ -1,0 +1,93 @@
+{% extends 'annonces/main_bak.html' %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% block title %}{% trans 'Register' %} {% endblock %}
+
+{% block content %}
+
+  <main id="main">
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>{% trans 'Create an account' %}</h2>
+          <p>{% trans 'Fill the form to create an account. All fields are required' %}</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 col-lg-6 col-xs-4">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="border-color: blue;">
+              <div class="card-body">
+                <form action="" method="post">
+                  {% csrf_token %}
+
+                  <div id="form">
+
+                      <div class="form-group row">
+                          <input type="text" name="username" id="username" class="form-control" placeholder="username" required>
+                      </div>
+
+                      <div class="form-group row">
+                          <input type="text" name="first_name" id="first_name" class="form-control" placeholder="first name" required>
+                      </div>
+
+                      <div class="form-group row">
+                          <input type="text" name="last_name" id="last_name" class="form-control" placeholder="last name" required>
+                      </div>
+
+                      <div class="form-group row">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="email address" required>
+                      </div>
+
+                      <div class="form-group row">
+                        <input type="password" name="password1" id="password1" class="form-control" placeholder="password" required>
+                      </div>
+
+                      <div class="form-group row">
+                        <input type="password" name="password2" id="password2" class="form-control" placeholder="confirm password" required>
+                      </div>
+
+                      <div class="form-group">
+                          <input type="checkbox" name="group" id="group" value="prestataire"> {% trans 'Create my account As service provider' %}
+                      </div>
+
+<!--                    <div class="form-group">-->
+<!--                      <input type="checkbox" id="check1"><a href="#"><small> Je confirme que les données saisies sont correctes.</small></a>-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+<!--                      <input type="checkbox" id="check2"><a href="#"><small> J'accepte les termes et conditions d'utilisation de la plateforme.</small></a>-->
+<!--                    </div>-->
+
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-block">{% trans 'Create an account' %}</button>
+                    </div>
+
+                    <div class="form-group">
+                      <a href="{% url 'login' %}">{% trans 'You already have an account ? Sign in here' %} </a>
+                    </div>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+{% endblock %}
+{% block scripts %}
+<script>
+
+</script>
+{% endblock %}

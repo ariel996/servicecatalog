@@ -1,0 +1,231 @@
+{% load static %}
+{% load i18n %}
+{% load flags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CamerounBusiness | {% block title %} {% endblock %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static '/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static '/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static '/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <!-- Select2 -->
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2/css/select2.min.css' %}">
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static '/assets/css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" />
+
+  {% block styles %}
+
+  {% endblock %}
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto" style="font-weight: bold"><a href="{% url 'home' %}">CamerBusiness</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+<!--          <li><a href="{% url 'annonces' %}">{% trans 'Announces' %}</a></li>-->
+<!--          <li><a href="{% url 'products' %}">{% trans 'Products' %}</a></li>-->
+          <li><a href="{% url 'contact' %}">{% trans 'Contact' %}</a></li>
+          <li><a href="{% url 'about' %}">{% trans 'About' %}</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'dashboard' %}">{% trans 'Dashboard' %}</a></li>
+          {% else %}
+          <li><a href="{%  url 'login' %}">{% trans 'Login' %}</a></li>
+          {% endif %}          <li class="drop-down"><a href="">{% trans 'Language' %}</a>
+            <ul>
+              {% languages 'square' %}
+              <!--<li><a href="#"><img src="{% static '/assets/img/france_flag.ico' %}" alt="" width="28" height="28"></a></li>
+              <li><a href="#"><img src="{% static '/assets/img/uk.svg' %}" alt="" width="28" height="28"></a></li>-->
+            </ul>
+          </li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <a href="{% url 'create_announce' %}" class="get-started-btn scrollto" style="font-weight: bold;">
+        <i class="icofont-plus-square btn-lg"></i>{% trans 'Make a post' %}
+      </a>
+    </div>
+  </header><!-- End Header -->
+
+<main id="main">
+    {% block content %}
+      <!-- main content of the application -->
+    {% endblock %}
+</main>
+
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>CamerBusiness</h3>
+            {% for web in webinfo %}
+            <p>
+              {{ web.address }}<br>
+              {{ web.town }} <br><br>
+              <strong>Phone:</strong> {{ web.phone }}<br>
+              <strong>Email:</strong> {{ web.email }}<br>
+            </p>
+            {% endfor %}
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>{% trans 'Useful Links' %}</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}">{% trans 'home' %}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">{% trans 'About us' %}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'products' %}">{% trans 'Products' %}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'annonces' %}">{% trans 'Announcements' %}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{% trans 'Privacy policy' %}</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>{% trans 'Our Services' %}</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{% trans 'Online Support' %}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{% trans 'Announcements' %}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{% trans 'Consulting' %}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{% trans 'Assistance' %}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{% trans 'Online messaging' %}</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>{% trans 'Join our newsletter' %}</h4>
+            <p>{% trans 'Fill this form to be notified on our daily news by email' %}</p>
+            <form action="/newsletter/camerbusiness/subscribe/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <input type="email" name="email_field" required="" id="id_email_field">
+              <input type="submit" value="Subscribe" id="id_submit" name="submit">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="mr-md-auto text-center text-md-left">
+        <div class="copyright">
+          &copy; Copyright <strong><span>CamerBusiness</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/ -->
+          Designed by <a href="http://gainyoconsulting.mooc-hegtd.cm/" target="_blank">Gainyo Consulting</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static '/assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static '/assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static '/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static '/assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static '/assets/vendor/counterup/counterup.min.js' %}"></script>
+  <script src="{% static '/assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static '/assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static '/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static '/assets/vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static '/assets/js/main.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+
+  <!-- Select2 -->
+<script src="{% static '/admin/plugins/select2/js/select2.full.min.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success'%}
+                <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+            {% elif message.tags == 'info' %}
+                <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+            {% elif message.tags == 'warning' %}
+                <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+            {% elif message.tags == 'error' %}
+                <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+<script>
+//Initialize Select2 Elements
+    $('.select2').select2()
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+      })
+</script>
+    <script>
+    $(function () {
+      $("#item").autocomplete({
+        source: "{% url 'autocomplete' %}",
+        select: function(event, ui) {
+          AutoCompleteSelectHandler(event, ui)
+        },
+        minLength: 2,
+      });
+    });
+    function AutoCompleteSelectHandler(event, ui) {
+      var selectedObj = ui.item;
+    }
+  </script>
+{% block scripts %} {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+{% extends 'annonces/prestataire/main.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %} {% trans 'Reply comment' %} {% endblock %}
+{% block styles %}
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2/css/select2.min.css' %}">
+  <link rel="stylesheet" href="{% static '/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+{% endblock %}
+
+{% block breadcrumb %}
+<div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">{% trans 'Dashboard' %} </h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">{% trans 'Home' %}</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'comments' %}">{% trans 'List comments' %}</a></li>
+                <li class="breadcrumb-item">Reply comment</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+{% endblock %}
+
+{% block content %}
+
+<div class="col-lg-12 col-md-8 col-sm-6 col-xs-4">
+    <!-- Horizontal Form -->
+<div class="card card-info">
+  <div class="card-header">
+    <h3 class="card-title">
+        {% trans 'Reply to a comment' %}
+    </h3>
+  </div>
+  <!-- /.card-header -->
+  <!-- form start -->
+    <div class="card-body">
+        <form method="post" action="{% url 'reply_to_comment' %}">
+            {% csrf_token %}
+            <input type="hidden" name="user_id" value="{{ user.id }}">
+            <input type="hidden" name="reply_id" value="{{ comment.id }}">
+            <div class="form-group row">
+                <label for="annonce" class="col-form-label col-sm-2">Annonce:</label>
+                <div class="col-sm-10">
+                    <input type="text" name="annonce" id="annonce" class="form-control" value="{{ comment.annonce_id }}" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="content" class="col-form-label col-sm-2">Content:</label>
+                <div class="col-sm-10">
+                    <textarea name="content" id="content" cols="2" rows="2" class="form-control" required></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2"></label>
+                <div class="col-sm-10">
+                    <input type="submit" class="btn btn-primary" value="REPLY COMMENT">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- /.card -->
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Select2 -->
+<script src="{% static '/admin/plugins/select2/js/select2.full.min.js' %}"></script>
+<script>
+//Initialize Select2 Elements
+    $('.select2').select2()
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+      })
+</script>
+{% endblock %}

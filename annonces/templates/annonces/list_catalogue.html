@@ -1,0 +1,80 @@
+{% extends 'annonces/main_bak.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Catalogue' %} {% endblock %}
+
+
+{% block content %}
+
+  <main id="main" style="margin:90px;">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'annonces' %}">{% trans 'Catalogue' %}</a></li>
+            <li class="breadcrumb-item" aria-current="page">{{ catalogue.nom }}</a></li>
+        </ol>
+    </nav>
+    <div class="row">
+        <div class="col-md-4 col-lg-8 col-sm-4 col-xs-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3>{% trans 'Product of the Catalogue' %}</h3>
+                    {% for product in products %}
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <img src="{{ product.product_image.url }}" alt="{{ product.product_name }}" class="mr-3" width="200px">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1">{{ product.product_name }}</h5>
+                                    <p>{{ product.product_price }} FCFA
+                                        <span class="badge badge-success">{% trans 'Available' %}</span>
+                                    </p>
+                                    <p>{{ product.product_description }}</p>
+                                    <p><a href="{% url 'product_detail' product.id %}">{% trans 'See the product' %}</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                    {% endfor %}
+                </div>
+                <div class="card-footer">
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination justify-content-center">
+                        {% if products.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page={{ products.previous_page_number}}">{% trans 'Previous' %}</a></li>
+                        {% endif %}
+                        {% for p in products.paginator.page_range %}
+                        {% if products.number == p %}
+                        <li class="page-item active">
+                          <a class="page-link" href="?page={{ p }}">{{ p }}</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item">
+                          <a class="page-link" href="?page={{ p }}">{{ p }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                        {% if products.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ products.next_page_number }}">{% trans 'Next' %}</a></li>
+                        {% endif %}
+                      </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="media">
+                        <img src="{{ catalogue.user.profile.profile_picture.url }}" alt="{{ catalogue.user.username}}" class="rounded" width="300px">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h3>{% trans 'Proprietor' %}: {{ catalogue.user.username }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main><!-- End #main -->
+
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}

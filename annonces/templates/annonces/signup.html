@@ -1,0 +1,60 @@
+{% extends 'annonces/main_bak.html' %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% block title %}{% trans 'Register' %} {% endblock %}
+
+{% block content %}
+
+  <main id="main">
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>{% trans 'Create an account' %}</h2>
+          <p>{% trans 'Which one do you want to create an account with ?' %}</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 col-lg-6 col-xs-4">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="border-color: blue;">
+              <div class="card-body">
+
+                <div id="compte">
+                  <div class="form-group">
+                    <button id="cc" class="btn btn-info btn-block"><a href="{% url 'register' %}" style="color: white;">{% trans 'Create an account with my email address' %}</a></button>
+                  </div>
+
+                  <div class="form-group">
+                    <button class="btn-danger btn-block btn-lg icofont-google-plus">
+                      <a href="{% provider_login_url 'google' %}" style="color: white;">{% trans 'Continue with Google' %}</a></button>
+                  </div>
+
+                  <div class="form-group">
+                    <button class="btn-primary btn-block btn-lg icofont-facebook">
+                      <a href="{% provider_login_url 'facebook' method='oauth2' %}" style="color: white;">{% trans 'Continue with Facebook' %}</a>
+                    </button>
+                  </div>
+
+                  <div class="form-group">
+                      <a href="{% url 'login' %}">{% trans 'You already have an account ? Sign in here' %}</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}

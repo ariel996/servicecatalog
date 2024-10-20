@@ -1,0 +1,596 @@
+{% extends 'annonces/provider/main.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans 'Availability' %}{% endblock %}
+{% block content %}
+    <div class="card mb-0">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <p>{% trans 'Availability' %} <span class="text-danger">*</span>
+                    </p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table availability-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="mr-1" name="alldays"> {% trans 'All Days' %}
+                                            </td>
+                                            <td class="w-180">
+                                                {% trans 'From time' %}
+                                                <span class="time-select mb-1">
+                                                    <select class="form-control" name="fromTime">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                            <td class="w-155">
+                                                {% trans 'To time' %}
+                                                <span class="time-select">
+                                                    <select class="form-control" name="toTime">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <!-- monday -->
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="mr-1" name="monday"> Monday
+                                            </td>
+                                            <td class="w-180">
+                                                {% trans 'From time' %}
+                                                <span class="time-select mb-1">
+                                                    <select class="form-control" name="fromTime">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                            <td class="w-155">
+                                                {% trans 'To time' %}
+                                                <span class="time-select">
+                                                    <select class="form-control" name="toTime">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                        </tr>
+
+                                        <!-- tuesday -->
+
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="mr-1" name="tuesday"> {% trans 'Tuesday' %}
+                                            </td>
+                                            <td class="w-180">
+                                                {% trans 'From time' %}
+                                                <span class="time-select mb-1">
+                                                    <select class="form-control" name="fromTime">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                            <td class="w-155">
+                                                {% trans 'To time' %}
+                                                <span class="time-select">
+                                                    <select class="form-control" name="toTime">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <!-- wednesday -->
+
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="mr-1"> Wednesday
+                                            </td>
+                                            <td class="w-180">
+                                                From time
+                                                <span class="time-select mb-1">
+                                                    <select class="form-control">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                            <td class="w-155">
+                                                To time
+                                                <span class="time-select">
+                                                    <select class="form-control">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <!-- thursday -->
+
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="mr-1"> Thursday
+                                            </td>
+                                            <td class="w-180">
+                                                From time
+                                                <span class="time-select mb-1">
+                                                    <select class="form-control">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                            <td class="w-155">
+                                                To time
+                                                <span class="time-select">
+                                                    <select class="form-control">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <!-- friday -->
+
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="mr-1"> Friday
+                                            </td>
+                                            <td class="w-180">
+                                                From time
+                                                <span class="time-select mb-1">
+                                                    <select class="form-control">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                            <td class="w-155">
+                                                To time
+                                                <span class="time-select">
+                                                    <select class="form-control">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <!-- saturday -->
+
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="mr-1"> Saturday
+                                            </td>
+                                            <td class="w-180">
+                                                From time
+                                                <span class="time-select mb-1">
+                                                    <select class="form-control">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                            <td class="w-155">
+                                                To time
+                                                <span class="time-select">
+                                                    <select class="form-control">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <!-- sunday -->
+
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="mr-1"> {% trans 'Sunday' %}
+                                            </td>
+                                            <td class="w-180">
+                                                {% trans 'From time' %}
+                                                <span class="time-select mb-1">
+                                                    <select class="form-control" name="fromTime">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                            <td class="w-155">
+                                                {% trans 'To time' %}
+                                                <span class="time-select">
+                                                    <select class="form-control">
+                                                        <option>Select Time</option>
+                                                        <option>00:00 AM</option>
+                                                        <option>01:00 AM</option>
+                                                        <option>02:00 AM</option>
+                                                        <option>03:00 AM</option>
+                                                        <option>04:00 AM</option>
+                                                        <option>05:00 AM</option>
+                                                        <option>06:00 AM</option>
+                                                        <option>07:00 AM</option>
+                                                        <option>08:00 AM</option>
+                                                        <option>09:00 AM</option>
+                                                        <option>10:00 AM</option>
+                                                        <option>11:00 AM</option>
+                                                        <option>12:00 PM</option>
+                                                        <option>01:00 PM</option>
+                                                        <option>02:00 PM</option>
+                                                        <option>03:00 PM</option>
+                                                        <option>04:00 PM</option>
+                                                        <option>05:00 PM</option>
+                                                        <option>06:00 PM</option>
+                                                        <option>07:00 PM</option>
+                                                        <option>08:00 PM</option>
+                                                        <option>09:00 PM</option>
+                                                        <option>10:00 PM</option>
+                                                        <option>11:00 PM</option>
+                                                    </select>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-section text-right">
+                    <button class="btn btn-primary submit-btn" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
